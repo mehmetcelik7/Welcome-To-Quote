@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct GoToNextView: View {
+    let text: String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text(text)
+            Image(systemName: "arrow.forward")
+        }
+        .foregroundColor(.black)
+        .padding()
+        .background(.white)
+        .cornerRadius(10)
+        .padding()
+        
     }
 }
 
 #Preview {
-    GoToNextView()
+    ZStack {
+        Color.black.ignoresSafeArea()
+        GoToNextView(text: "Generate Quote")
+    }
 }

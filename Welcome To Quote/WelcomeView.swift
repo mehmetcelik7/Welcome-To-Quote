@@ -9,13 +9,23 @@ import SwiftUI
 
 struct WelcomeView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            Color.black.ignoresSafeArea()
+            VStack {
+                Spacer()
+                Image(simpleEclipse)
+                    .resizable()
+                    .scaledToFit()
+                Spacer()
+                WelcomeQuote()
+                Spacer()
+              //  NormalTextView(text: "Welcome to your daily dose of inspiration")
+                
+                GoToNextView(text: "Generate Quote")
+                 
+            }
+            
         }
-        .padding()
     }
 }
 
